@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Список задач</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <!-- Шапка + кнопка темы -->
+    <div class="header">
+      <h1>📝 Список задач</h1>
+      <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+
+    <!-- Вкладки (задачи / заметки) -->
+
+    <!-- Вкладка задач -->
+    <div id="tasks" class="tab-content active">
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Новая задача..." />
+      </div>
+
+      <div class="options">
+        <input type="date" id="taskDate" />
+        
+        <select id="taskPriority">
+          <option value="low">Низкий</option>
+          <option value="medium" selected>Средний</option>
+          <option value="high">Высокий</option>
+        </select>
+
+        <button id="addBtn" class="floating-btn">+</button>
+      </div>
+
+      <ul id="taskList"></ul>
+    </div>
+
+    <!-- Вкладка заметок -->
+    <div id="notes" class="tab-content">
+      <div class="input-group">
+        <input type="text" id="noteInput" placeholder="Новая заметка..." />
+        <button id="addNoteBtn">+</button>
+      </div>
+
+      <ul id="noteList"></ul>
+    </div>
+    <div class="tabs bottom-tabs">
+      <button class="tab active" data-tab="tasks">📝<br>Задачи</button>
+      <button class="tab" data-tab="notes">📒<br>Заметки</button>
+    </div>
+
+  </div>
+  <!-- Модальное окно для заметок -->
+<div id="noteModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>Редактировать заметку</h2>
+    <textarea id="noteDetail" rows="6" placeholder="Подробности..."></textarea>
+    <button id="saveNote">Сохранить</button>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
