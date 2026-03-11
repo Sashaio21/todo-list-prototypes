@@ -89,6 +89,19 @@ ul {
   margin-top: 8px;
 }
 
+
+textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 16px;
+  resize: vertical;
+}
+
+
 /* =========================
    FORM ELEMENTS
 ========================= */

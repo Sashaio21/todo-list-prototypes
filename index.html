@@ -38,6 +38,20 @@
       <ul id="taskList"></ul>
     </div>
 
+
+    <div id="ai" class="tab-content">
+
+      <div class="input-group">
+        <textarea id="aiInput" placeholder="Напиши что нужно сделать сегодня..." rows="5"></textarea>
+      </div>
+
+      <div class="input-group">
+        <button id="aiGenerateBtn">Структурировать</button>
+      </div>
+
+    </div>
+
+
     <!-- Вкладка заметок -->
     <div id="notes" class="tab-content">
       <div class="input-group">
@@ -48,9 +62,21 @@
       <ul id="noteList"></ul>
     </div>
     <div class="tabs bottom-tabs">
-      <button class="tab active" data-tab="tasks">📝<br>Задачи</button>
-      <button class="tab" data-tab="notes">📒<br>Заметки</button>
+
+      <button class="tab active" data-tab="tasks">
+        📝<br>Задачи
+      </button>
+
+      <button class="tab" data-tab="ai">
+        🤖<br>AI
+      </button>
+
+      <button class="tab" data-tab="notes">
+        📒<br>Заметки
+      </button>
+
     </div>
+
 
   </div>
   <!-- Модальное окно для заметок -->

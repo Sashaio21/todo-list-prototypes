@@ -18,6 +18,10 @@ const priorityInput = document.getElementById("taskPriority");
 const tabs = document.querySelectorAll(".tab");
 const contents = document.querySelectorAll(".tab-content");
 
+const aiInput = document.getElementById("aiInput");
+const aiGenerateBtn = document.getElementById("aiGenerateBtn");
+
+
 /* =========================
    DATA (STATE)
 ========================= */
@@ -58,6 +62,49 @@ themeToggle.addEventListener("click", () => {
 
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
+
+
+/* =========================
+   AI
+========================= */
+
+aiGenerateBtn.addEventListener("click", generateTasksFromAI);
+
+function generateTasksFromAI() {
+  console.log("test")
+  const text = aiInput.value.trim();
+  if (!text) return;
+  try {
+
+    const aiTasks = JSON.parse(text);
+
+    aiTasks.forEach(task => {
+
+      tasks.push({
+        text: task.text,
+        date: task.date || "",
+        priority: task.priority || "medium",
+        completed: task.completed ?? false
+      });
+
+    });
+
+    saveTasks();
+    renderTasks();
+
+    aiInput.value = "";
+
+  } catch (error) {
+
+    alert("Неверный JSON");
+
+  }
+
+}
+
+
+
+
 
 /* =========================
    TASKS
